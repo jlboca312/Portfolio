@@ -1,0 +1,78 @@
+
+package mazewithpath7;
+import java.util.*;
+
+
+public class Intcoll {
+    private LinkedList<Integer> c;
+
+    //Default constructor, initializes Intcoll5 to hold 500 ints
+    public Intcoll() {
+        c = new LinkedList<Integer>();
+    }
+
+    //Alternate constructor, initializes Intcoll5 to hold i ints
+    public Intcoll(int i) {
+        c = new LinkedList<Integer>();
+    }
+
+    // Retrurns true if int i is in collection, returns false otherwise
+    public boolean belongs(int i) {
+        Integer I = new Integer(i);
+        return c.contains(I);
+    }
+
+    // Inserts i into the collection if not already in collection
+    public void insert(int i) {
+        if (i > 0) {
+            Integer I = new Integer(i);
+            if (!(c.contains(I))) {
+                c.add(I);
+            }
+        }
+    }
+
+    // Removes i from collection if in the collection
+    public void omit(int i) {
+        if (i > 0) {
+            Integer I = new Integer(i);
+            if (c.contains(I)) {
+                c.remove(I);
+            }
+        }
+    }
+
+    // returns the size of the collection
+    public int gethowmany() {
+        return c.size();
+    }
+
+    // prints the ints in the collection 
+    public void print() {
+        ListIterator<Integer> I = c.listIterator();
+        System.out.println();
+        while (I.hasNext()) {
+            System.out.println(I.next());
+        }
+    }
+
+    // returns true if Intcoll5 instance contents are the same as Intcoll5 obj
+    public boolean equals(Intcoll obj) {
+        return c.equals(obj.c);
+    }
+
+    // copies contents from Intcoll5 instance Intcoll5 obj
+    public void copy(Intcoll obj) {
+        
+        
+        if (this != obj) {
+           ListIterator<Integer> objIter = obj.c.listIterator();  // List for passed obj
+           ListIterator<Integer> thisIter = this.c.listIterator();    //List for this obj
+           while(objIter.hasNext()){
+               thisIter.add(objIter.next());
+           }
+                
+            
+        }
+    }
+}
