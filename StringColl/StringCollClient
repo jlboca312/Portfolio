@@ -1,0 +1,74 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package stringcollclient;
+import java.util.*;
+
+
+public class StringcollClient {
+    public static final String SENTINEL = "#";
+
+    public static void main(String[] args) {
+//        StringColl A = new StringColl();
+//        StringColl B = new StringColl();
+//        
+//       A.insert("hi");
+//       A.insert("hello");
+//       A.insert("apple");
+//       A.insert("function");
+//       A.insert("zzz");
+//       A.insert("temple");
+//       A.omit("hi");
+//       A.print();
+        
+        String value;
+        Scanner input = new Scanner(System.in);
+
+        StringColl P = new StringColl();
+        StringColl N = new StringColl();
+        StringColl L = new StringColl();
+
+        System.out.println("Enter a positive or negative word to be inserted, like '+hello' or '-hello',  or '#' to quit:");
+        value = input.next();
+        String word = value.substring(1);
+        
+        
+        while(!value.equals(SENTINEL)) {
+
+            if (value.startsWith("+")) {
+                P.insert(word);
+                L.insert(word);
+            } else if(value.startsWith("-")){
+                N.insert(word);
+                L.omit(word);
+            }
+
+            System.out.println("Enter a positive or negative word to be inserted, like '+hello' or '-hello',  or '#' to quit:");
+            value = input.next();
+            word = value.substring(1);
+        }
+        
+        
+        System.out.println("\nThe values in collection P are:");
+        P.print();
+        System.out.println("\nThe values in collection N are:");
+        N.print();
+        System.out.println("\nThe values in collection L are:");
+        L.print();
+        if (P.equals(N)) {
+            System.out.println("\nP and N are equal.");
+        } else {
+            System.out.println("\nP and N are equal.");
+        }
+        StringColl A = new StringColl();
+        A.copy(L);
+        System.out.println("\nThe values in the copy of L are:\n");
+        A.print();
+        System.out.println("There are " + P.get_howmany() + " words in collection P");
+        
+    }
+    
+}
