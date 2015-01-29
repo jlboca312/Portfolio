@@ -1,0 +1,102 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*Jedrick Boca
+ * TuID - 915050649
+ * Section 1
+ */
+package shapedrawer;
+
+import simplegui.SimpleGUI;
+import java.awt.Color;
+import java.util.Scanner;
+/**
+ *
+ * @author JedrickBoca
+ */
+public class ShapeDrawer {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        
+       
+       
+            
+            
+            System.out.print("How transparent do you want your rectangles and ellipses, enter a"
+                    + " \nnumber between 0 (most transparent) to 1 (least transparent): ");
+            double transparency;
+            transparency = input.nextDouble();
+            
+          
+            System.out.println("Now you will create rectangles and ellipses.");
+            
+            System.out.println("Firstly, name your masterpiece: ");
+            String name;
+            name = input.next();
+            
+            System.out.print("Enter an x-position: ");
+            double xpos2;
+            xpos2 = input.nextDouble();
+            
+            System.out.print("Enter a y-position: ");
+            double ypos2;
+            ypos2 = input.nextDouble();
+            
+            System.out.print("Enter a width: ");
+            double width2;
+            width2 = input.nextDouble();
+            
+            System.out.print("Enter a height: ");
+            double height2;
+            height2 = input.nextDouble();
+            
+            double variable;
+            variable = 100;
+            
+            
+            SimpleGUI simpleShape = new SimpleGUI(false);
+         
+           
+            simpleShape.drawText("These are your rectangles and ellipses, called " + name, xpos2, ypos2);
+            simpleShape.drawFilledEllipse(xpos2, ypos2, width2*height2, height2+width2, Color.BLUE, transparency, "ellipse1");
+        
+            simpleShape.drawFilledBox(xpos2, ypos2+variable, width2*height2, height2+width2, Color.RED, transparency, "ellipse2");
+            
+            simpleShape.drawFilledEllipse(xpos2, ypos2+(variable+100), width2*height2, height2+width2, Color.ORANGE, transparency, "ellipse3");
+    
+            simpleShape.drawFilledBox(xpos2, ypos2+(variable+200), width2*height2, height2+width2, Color.YELLOW, transparency, "ellipse4");
+    
+            simpleShape.drawFilledEllipse(xpos2, ypos2, width2+height2, height2*width2, Color.DARK_GRAY, transparency, "ellipse5");
+    
+            simpleShape.drawFilledBox(xpos2+variable, ypos2, width2+height2, height2*width2, Color.MAGENTA, transparency, "ellipse6");
+            
+           simpleShape.drawFilledEllipse(xpos2+(variable+100), ypos2, width2+height2, height2*width2, Color.PINK, transparency, "ellipse7");
+ 
+           simpleShape.drawFilledBox(xpos2+(variable+200), ypos2, width2+height2, height2*width2, Color.cyan, transparency, "ellipse5");
+    
+           simpleShape.drawFilledEllipse(xpos2+(variable+300), ypos2, width2+height2, height2*width2, Color.black, transparency, "ellipse5");
+    
+           simpleShape.drawFilledBox(xpos2+(variable+400), ypos2, width2+height2, height2*width2, Color.pink, transparency, "ellipse5");
+    
+    
+    
+    }    
+       
+       
+  
+        
+        
+        
+        
+        
+        
+
+    }
+
